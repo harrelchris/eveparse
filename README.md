@@ -39,5 +39,5 @@ python scripts\sde.py
 ### Test
 
 ```shell
-python -m unittest
+scripts\test
 ```
