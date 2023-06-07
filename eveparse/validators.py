@@ -1,12 +1,6 @@
 import functools
-import json
-import pathlib
 
-INV_TYPES_JSON_FILE_PATH = str(pathlib.Path(__file__).parent / "data/invTypes.json")
-
-with open(INV_TYPES_JSON_FILE_PATH, "r", encoding="utf-8") as json_file:
-    inv_types_dict = json.load(json_file)
-    TYPE_NAMES_MAP = set(inv_types_dict.keys())
+from eveparse.constants import TYPE_NAMES
 
 
 def is_int(string: str) -> bool:
@@ -34,4 +28,4 @@ def is_legal_string(string: str) -> bool:
 
 @functools.lru_cache(maxsize=25000)  # slightly more than number of currently published invTypes at 23623
 def is_valid_name(string: str) -> bool:
-    return string in TYPE_NAMES_MAP
+    return string in TYPE_NAMES
