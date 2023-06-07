@@ -7,10 +7,9 @@ from .parsers.namespacequantity import NameSpaceQuantity
 from .parsers.quantityspacename import QuantitySpaceName
 
 PARSERS = [
+    NameOnly,
     NameSpaceQuantity,
     QuantitySpaceName,
-
-    NameOnly  # Must be final parser
 ]
 
 
