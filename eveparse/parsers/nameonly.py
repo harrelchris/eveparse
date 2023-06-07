@@ -1,4 +1,4 @@
-from eveparser.parsers.base import UnTabbedParser
+from eveparse.parsers.base import UnTabbedParser
 
 
 class NameOnly(UnTabbedParser):

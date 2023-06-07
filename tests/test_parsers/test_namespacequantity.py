@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from eveparser.errors import ParserError
-from eveparser.parsers.namespacequantity import NameSpaceQuantity
+from eveparse.errors import ParserError
+from eveparse.parsers.namespacequantity import NameSpaceQuantity
 
 
 class NameOnlyTestCase(TestCase):

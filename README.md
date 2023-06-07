@@ -1,17 +1,17 @@
-# Eve Parser
+# Eve Parse
 
 Parser for Eve Online - extract item name and quantity from a string
 
 ## Install
 
 ```shell
-pip install eveparser
+pip install eveparse
 ```
 
 ## Usage
 
 ```python
-import eveparser
+import eveparse
 
 string = "Ragnarok 1"
 

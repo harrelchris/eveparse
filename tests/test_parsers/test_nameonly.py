@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from eveparser.parsers.nameonly import NameOnly
+from eveparse.parsers.nameonly import NameOnly
 
 
 class NameOnlyTestCase(TestCase):

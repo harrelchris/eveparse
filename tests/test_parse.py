@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from eveparser import parse
-from eveparser.errors import ParserError
+from eveparse import parse
+from eveparse.errors import ParserError
 
 
 class ParseTestCase(TestCase):
