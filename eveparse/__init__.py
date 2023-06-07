@@ -1,3 +1,5 @@
+import functools
+
 from .converters import normalize_string
 from .errors import ConverterError, ParserError, ValidatorError
 from .validators import is_int, is_legal_string, is_valid_name
@@ -13,7 +15,8 @@ PARSERS = [
 ]
 
 
-def parse(string: str) -> tuple[str, int]:
+@functools.cache
+def parse(string: str) -> tuple[int, str, int]:
     normalized_string = normalize_string(string)
 
     if not is_legal_string(normalized_string):
