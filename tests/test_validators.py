@@ -30,7 +30,7 @@ class IsIntTestCase(TestCase):
 
 class IsValidNameTestCase(TestCase):
     def test_example_passes(self):
-        self.assertEqual(is_valid_name("Ragnarok"), True)
+        self.assertEqual(is_valid_name("ragnarok"), True)
 
     def test_string_fails(self):
         self.assertEqual(is_valid_name("someinvalidstring"), False)

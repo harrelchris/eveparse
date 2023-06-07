@@ -1,6 +1,6 @@
 # Eve Parse
 
-Parser for Eve Online - extract item name and quantity from a string
+Parser for Eve Online - extract item name and quantity from a string, and return values with type_id
 
 ## Install
 
@@ -16,11 +16,11 @@ import eveparse
 string = "Ragnarok 1"
 
 try:
-    name, quantity = eveparse.parse(string)
+    type_id, name, quantity = eveparse.parse(string)
 except eveparse.ParserError as error:
     print(error)
 else:
-    print(name, quantity)
+    print(type_id, name, quantity)
 ```
 
 ## Failure

@@ -22,26 +22,16 @@ def convert_csv_to_dict(csv_file_path: str) -> dict:
             # type_id, group_id, name, mass, volume, capacity, portion_size, race_id,
             # base_price, published, market_group_id, icon_id, sound_id, graphic_id
 
-            type_id, group_id, name, _, volume, capacity, _, _, _, published, market_group_id, _, _, _ = row
+            type_id = row[0]
+            name = row[2]
+            published = row[9]
             if published == "0":
                 continue
 
             type_id = int(type_id)
-            volume = float(volume)
-            capacity = float(capacity)
-            group_id = int(group_id)
-
-            if market_group_id == "\\N":
-                market_group_id = None
-            else:
-                market_group_id = int(market_group_id)
-            inv_types[name] = {
+            inv_types[name.casefold()] = {
                 "type_id": type_id,
                 "name": name,
-                "volume": volume,
-                "capacity": capacity,
-                "group_id": group_id,
-                "market_group_id": market_group_id,
             }
     return inv_types
 
