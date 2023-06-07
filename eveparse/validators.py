@@ -34,4 +34,4 @@ def is_legal_string(string: str) -> bool:
 
 @functools.lru_cache(maxsize=25000)  # slightly more than number of currently published invTypes at 23623
 def is_valid_name(string: str) -> bool:
-    return string.casefold() in TYPE_NAMES_MAP
+    return string in TYPE_NAMES_MAP

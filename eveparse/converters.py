@@ -4,7 +4,7 @@ def normalize_string(string: str) -> str:
     """
 
     stripped_string = string.strip()
-    return stripped_string
+    return stripped_string.casefold()
 
 
 def to_int(string: str) -> int:
