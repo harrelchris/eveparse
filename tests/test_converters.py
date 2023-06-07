@@ -5,12 +5,12 @@ from eveparse.converters import normalize_string, to_int
 
 class NormalizeStringTestCase(TestCase):
     def test_leading_removed(self):
-        self.assertEqual(normalize_string(" Ragnarok"), "Ragnarok")
-        self.assertEqual(normalize_string("	Ragnarok"), "Ragnarok")
+        self.assertEqual(normalize_string(" Ragnarok"), "ragnarok")
+        self.assertEqual(normalize_string("	Ragnarok"), "ragnarok")
 
     def test_trailing_removed(self):
-        self.assertEqual(normalize_string("Ragnarok "), "Ragnarok")
-        self.assertEqual(normalize_string("Ragnarok	"), "Ragnarok")
+        self.assertEqual(normalize_string("Ragnarok "), "ragnarok")
+        self.assertEqual(normalize_string("Ragnarok	"), "ragnarok")
 
 
 class ToIntTestCase(TestCase):

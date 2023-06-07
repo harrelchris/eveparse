@@ -6,10 +6,10 @@ from eveparse.parsers.namespacequantity import NameSpaceQuantity
 
 class NameOnlyTestCase(TestCase):
     def test_example_passes(self):
-        self.assertEqual(NameSpaceQuantity.parse("Ragnarok 2"), ("Ragnarok", 2))
+        self.assertEqual(NameSpaceQuantity.parse("ragnarok 2"), ("ragnarok", 2))
 
     def test_no_space_fails(self):
-        self.assertRaises(ParserError, NameSpaceQuantity.parse, "Ragnarok")
+        self.assertRaises(ParserError, NameSpaceQuantity.parse, "ragnarok")
 
     def test_string_quantity_fails(self):
-        self.assertRaises(ParserError, NameSpaceQuantity.parse, "Ragnarok string")
+        self.assertRaises(ParserError, NameSpaceQuantity.parse, "ragnarok string")
