@@ -27,7 +27,7 @@ def convert_csv_to_dict(csv_file_path: str) -> dict:
                 continue
 
             type_id = int(type_id)
-            volume = float(volume)
+            inv_types[name.casefold()] = {
             capacity = float(capacity)
             group_id = int(group_id)
 
