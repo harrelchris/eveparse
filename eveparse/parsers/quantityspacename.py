@@ -1,5 +1,5 @@
 from eveparse.parsers.base import UnTabbedParser
-from eveparse.converters import normalize_string, to_int
+from eveparse.converters import to_int
 from eveparse.errors import ParserError
 from eveparse.validators import is_int
 
@@ -19,6 +19,5 @@ class QuantitySpaceName(UnTabbedParser):
             raise ParserError("Quantity is not int")
         quantity = to_int(quantity_str)
 
-        name_raw = " ".join(parts[1:])
-        name = normalize_string(name_raw)
+        name = " ".join(parts[1:])
         return name, quantity
