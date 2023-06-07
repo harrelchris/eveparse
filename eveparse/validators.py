@@ -6,7 +6,7 @@ INV_TYPES_JSON_FILE_PATH = str(pathlib.Path(__file__).parent / "data/invTypes.js
 
 with open(INV_TYPES_JSON_FILE_PATH, "r", encoding="utf-8") as json_file:
     inv_types_dict = json.load(json_file)
-    TYPE_NAMES_MAP = map(str.casefold, inv_types_dict.keys())
+    TYPE_NAMES_MAP = set(inv_types_dict.keys())
 
 
 def is_int(string: str) -> bool:
