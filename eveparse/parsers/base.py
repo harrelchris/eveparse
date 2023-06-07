@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from eveparser.errors import ParserError
+from eveparse.errors import ParserError
 
 
 class Parser(ABC):

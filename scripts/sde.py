@@ -6,8 +6,8 @@ import requests
 import sys
 
 MD5_HASH_FILE_PATH: str = str(pathlib.Path(__file__).parent.parent / "hash.md5")
-INV_TYPES_CSV_FILE_PATH: str = str(pathlib.Path(__file__).parent.parent / "eveparser/data/invTypes.csv")
-INV_TYPES_JSON_FILE_PATH: str = str(pathlib.Path(__file__).parent.parent / "eveparser/data/invTypes.json")
+INV_TYPES_CSV_FILE_PATH: str = str(pathlib.Path(__file__).parent.parent / "eveparse/data/invTypes.csv")
+INV_TYPES_JSON_FILE_PATH: str = str(pathlib.Path(__file__).parent.parent / "eveparse/data/invTypes.json")
 
 MD5_HASH_URL: str = "https://www.fuzzwork.co.uk/dump/sqlite-latest.sqlite.bz2.md5"
 INV_TYPES_CSV_URL: str = "https://www.fuzzwork.co.uk/dump/latest/invTypes-nodescription.csv"

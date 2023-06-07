@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from eveparser.errors import ParserError
-from eveparser.parsers.base import TabbedParser, UnTabbedParser
+from eveparse.errors import ParserError
+from eveparse.parsers.base import TabbedParser, UnTabbedParser
 
 
 class TabbedParserTestCase(TestCase):

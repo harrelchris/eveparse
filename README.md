@@ -1,26 +1,31 @@
-# Eve Parser
+# Eve Parse
 
 Parser for Eve Online - extract item name and quantity from a string
 
 ## Install
 
 ```shell
-pip install eveparser
+pip install eveparse
 ```
 
 ## Usage
 
 ```python
-import eveparser
+import eveparse
 
 string = "Ragnarok 1"
 
-name, quantity = eveparser.parse(string)
+try:
+    name, quantity = eveparse.parse(string)
+except eveparse.ParserError as error:
+    print(error)
+else:
+    print(name, quantity)
 ```
 
 ## Failure
 
-The parser will return raise an error if it is unable to parse the string.
+The parser will raise ParserError if it is unable to parse the string.
 
 ## Development
 
@@ -39,5 +44,5 @@ python scripts\sde.py
 ### Test
 
 ```shell
-python -m unittest
+scripts\test
 ```

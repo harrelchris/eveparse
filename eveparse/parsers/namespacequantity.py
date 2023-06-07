@@ -1,7 +1,7 @@
-from eveparser.parsers.base import UnTabbedParser
-from eveparser.converters import normalize_string, to_int
-from eveparser.errors import ParserError
-from eveparser.validators import is_int
+from eveparse.parsers.base import UnTabbedParser
+from eveparse.converters import normalize_string, to_int
+from eveparse.errors import ParserError
+from eveparse.validators import is_int
 
 
 class NameSpaceQuantity(UnTabbedParser):

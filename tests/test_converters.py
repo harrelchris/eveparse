@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from eveparser.converters import normalize_string, to_int
+from eveparse.converters import normalize_string, to_int
 
 
 class NormalizeStringTestCase(TestCase):

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from eveparser.validators import is_int, is_valid_name
+from eveparse.validators import is_int, is_valid_name
 
 
 class IsIntTestCase(TestCase):
