@@ -7,6 +7,7 @@ from .validators import is_int, is_legal_string, is_valid_name
 
 from .parsers.nameonly import NameOnly
 from .parsers.namespacequantity import NameSpaceQuantity
+from .parsers.namespacexquantity import NameSpaceXQuantity
 from .parsers.quantityspacename import QuantitySpaceName
 from .parsers.quantityspacexspacename import QuantitySpaceXSpaceName
 from .parsers.quantityxspacename import QuantityXSpaceName
@@ -14,6 +15,7 @@ from .parsers.quantityxspacename import QuantityXSpaceName
 PARSERS = [
     NameOnly,
     NameSpaceQuantity,
+    NameSpaceXQuantity,
     QuantitySpaceName,
     QuantitySpaceXSpaceName,
     QuantityXSpaceName,
