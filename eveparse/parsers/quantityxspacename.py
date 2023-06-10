@@ -11,7 +11,7 @@ class QuantityXSpaceName(UnTabbedParser):
     def parse(cls, string: str) -> tuple[str, int]:
         super().parse(string)
         if "x " not in string:
-            raise ParserError("Required space missing")
+            raise ParserError("Required x space missing")
         parts = string.split("x ")
 
         quantity_str = parts[0]
