@@ -38,7 +38,12 @@ def parse(string: str) -> tuple[int, str, int]:
             continue
         else:
             if not is_valid_name(parsed_name):
-                continue
+                if not parsed_name.endswith("*"):
+                    continue
+                else:
+                    parsed_name = parsed_name.strip("*")
+                    if not is_valid_name(parsed_name):
+                        continue
             inv_type = TYPES[parsed_name]
             type_id = inv_type["type_id"]
             name = inv_type["name"]
