@@ -6,6 +6,7 @@ from .errors import ConverterError, ParserError, ValidatorError
 from .validators import is_int, is_legal_string, is_valid_name
 
 from .parsers.contract import Contract
+from .parsers.contractnodetails import ContractNoDetails
 from .parsers.nameonly import NameOnly
 from .parsers.namespacequantity import NameSpaceQuantity
 from .parsers.namespacexquantity import NameSpaceXQuantity
@@ -16,6 +17,7 @@ from .parsers.quantityxspacename import QuantityXSpaceName
 PARSERS = [
     NameOnly,
     Contract,
+    ContractNoDetails,
     NameSpaceQuantity,
     NameSpaceXQuantity,
     QuantitySpaceName,
