@@ -12,4 +12,4 @@ class NameOnlyTestCase(TestCase):
         self.assertRaises(ParserError, Contract.parse, "capital transverse bulkhead i	1")
 
     def test_string_quantity_fails(self):
-        self.assertRaises(ParserError, Contract.parse, "capital transverse bulkhead i	string")
+        self.assertRaises(ParserError, Contract.parse, "capital transverse bulkhead i	string	rig armor	module	rig slot")
