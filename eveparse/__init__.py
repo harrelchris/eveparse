@@ -32,8 +32,14 @@ PARSERS = [
 
 @functools.cache
 def parse(string: str) -> tuple[int, str, int]:
+    """Attempt to extract a valid item name and quantity from a string.
+    Tries all parsers and returns first non-failing parser.
+    Parsers and this function are designed to fail fast.
+    """
+
     normalized_string = normalize_string(string)
 
+    # Immediately cease processing known failing strings
     if not is_legal_string(normalized_string):
         raise ParserError("Illegal string")
 
