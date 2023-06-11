@@ -10,6 +10,8 @@ pip install eveparse
 
 ## Usage
 
+The `parse()` function takes a single-line string. It is designed to fail fast and will raise ParserError if it is unable to parse the string.
+
 ```python
 import eveparse
 
@@ -21,28 +23,4 @@ except eveparse.ParserError as error:
     print(error)
 else:
     print(type_id, name, quantity)
-```
-
-## Failure
-
-The parser is designed to fail fast and will raise ParserError if it is unable to parse the string.
-
-## Development
-
-## Setup
-
-```shell
-scripts\build
-```
-
-## Update SDE
-
-```shell
-python scripts\sde.py
-```
-
-### Test
-
-```shell
-scripts\test
 ```
