@@ -1,7 +1,5 @@
 from eveparse.parsers.base import UnTabbedParser
-from eveparse.converters import to_int
 from eveparse.errors import ParserError
-from eveparse.validators import is_int
 
 
 class ShipFitName(UnTabbedParser):
