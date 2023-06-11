@@ -36,3 +36,6 @@ class ParseTestCase(TestCase):
 
     def test_quantityxspacename(self):
         self.assertEqual(parse("3x Ragnarok"), (23773, "Ragnarok", 3))
+
+    def test_shipfitname(self):
+        self.assertEqual(parse("[Ragnarok, Bob's Ragnarok]"), (23773, "Ragnarok", 1))
