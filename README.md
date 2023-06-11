@@ -25,7 +25,7 @@ else:
 
 ## Failure
 
-The parser will raise ParserError if it is unable to parse the string.
+The parser is designed to fail fast and will raise ParserError if it is unable to parse the string.
 
 ## Development
 
