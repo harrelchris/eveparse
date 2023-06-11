@@ -2,6 +2,12 @@ import functools
 
 from eveparse.constants import TYPE_NAMES
 
+ILLEGAL_STRINGS = [
+    "minerals",
+    "components",
+    "item	required	available	est. unit price	typeid",
+]
+
 
 def is_int(string: str) -> bool:
     # these patterns indicate a float value such as 1,000.00
@@ -23,6 +29,8 @@ def is_int(string: str) -> bool:
 
 
 def is_legal_string(string: str) -> bool:
+    if string in ILLEGAL_STRINGS:
+        return False
     return True
 
 
