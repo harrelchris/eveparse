@@ -10,6 +10,7 @@ from .parsers.contractnodetails import ContractNoDetails
 from .parsers.nameonly import NameOnly
 from .parsers.namespacequantity import NameSpaceQuantity
 from .parsers.namespacexquantity import NameSpaceXQuantity
+from .parsers.nametabquantity import NameTabQuantity
 from .parsers.quantityspacename import QuantitySpaceName
 from .parsers.quantityspacexspacename import QuantitySpaceXSpaceName
 from .parsers.quantityxspacename import QuantityXSpaceName
@@ -20,6 +21,7 @@ PARSERS = [
     ContractNoDetails,
     NameSpaceQuantity,
     NameSpaceXQuantity,
+    NameTabQuantity,
     QuantitySpaceName,
     QuantitySpaceXSpaceName,
     QuantityXSpaceName,
