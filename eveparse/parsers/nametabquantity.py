@@ -1,6 +1,6 @@
-from eveparse.parsers.base import TabbedParser
 from eveparse.converters import to_int
 from eveparse.errors import ParserError
+from eveparse.parsers.base import TabbedParser
 from eveparse.validators import is_int
 
 
