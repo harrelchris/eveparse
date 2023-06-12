@@ -1,1 +1,4 @@
-requests
+Black
+Flake8
+isort
+Requests
