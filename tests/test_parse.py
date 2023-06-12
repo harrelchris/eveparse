@@ -39,3 +39,6 @@ class ParseTestCase(TestCase):
 
     def test_shipfitname(self):
         self.assertEqual(parse("[Ragnarok, Bob's Ragnarok]"), (23773, "Ragnarok", 1))
+
+    def test_viewcontents(self):
+        self.assertEqual(parse("Burned Logic Circuit	Salvaged Materials	Cargo Hold	26"), (25600, "Burned Logic Circuit", 26))

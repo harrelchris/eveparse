@@ -15,6 +15,7 @@ from .parsers.quantityspacename import QuantitySpaceName
 from .parsers.quantityspacexspacename import QuantitySpaceXSpaceName
 from .parsers.quantityxspacename import QuantityXSpaceName
 from .parsers.shipfitname import ShipFitName
+from .parsers.viewcontents import ViewContents
 
 PARSERS = [
     NameOnly,
@@ -27,6 +28,7 @@ PARSERS = [
     QuantitySpaceXSpaceName,
     QuantityXSpaceName,
     ShipFitName,
+    ViewContents,
 ]
 
 
