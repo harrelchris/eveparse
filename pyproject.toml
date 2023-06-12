@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "eveparse"
-version = "0.0.1"
+version = "1.0.0"
 authors = [
   {name="Chris Harrel", email="24297899+harrelchris@users.noreply.github.com"},
 ]
