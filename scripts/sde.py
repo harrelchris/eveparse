@@ -1,4 +1,5 @@
 import csv
+import io
 import json
 import os
 import pathlib
@@ -6,16 +7,15 @@ import requests
 import sys
 
 MD5_HASH_FILE_PATH: str = str(pathlib.Path(__file__).parent.parent / "hash.md5")
-INV_TYPES_CSV_FILE_PATH: str = str(pathlib.Path(__file__).parent.parent / "eveparse/data/invTypes.csv")
 INV_TYPES_JSON_FILE_PATH: str = str(pathlib.Path(__file__).parent.parent / "eveparse/data/invTypes.json")
 
 MD5_HASH_URL: str = "https://www.fuzzwork.co.uk/dump/sqlite-latest.sqlite.bz2.md5"
 INV_TYPES_CSV_URL: str = "https://www.fuzzwork.co.uk/dump/latest/invTypes-nodescription.csv"
 
 
-def convert_csv_to_dict(csv_file_path: str) -> dict:
+def convert_csv_to_dict(csv_file_content: str) -> dict:
     inv_types = {}
-    with open(csv_file_path, "r", encoding="utf-8") as csv_file:
+    with io.StringIO(csv_file_content) as csv_file:
         csv_content = csv.reader(csv_file)
         for row in csv_content:
             # CSV column names are:
@@ -73,14 +73,12 @@ def main():
 
     # Download updated SDE
     csv_file = request_url_text(INV_TYPES_CSV_URL)
-    write_file_text(INV_TYPES_CSV_FILE_PATH, csv_file)
 
-    # Convert CSV SDE to JSON
-    inv_types = convert_csv_to_dict(INV_TYPES_CSV_FILE_PATH)
+    # Convert CSV SDE to JSON and write to file
+    inv_types = convert_csv_to_dict(csv_file)
     write_file_json(INV_TYPES_JSON_FILE_PATH, inv_types)
 
-    # Clean up files
-    delete_file(INV_TYPES_CSV_FILE_PATH)
+    # Update hash
     write_file_text(MD5_HASH_FILE_PATH, latest_md5_hash_string)
 
 
