@@ -34,6 +34,7 @@ def is_legal_string(string: str) -> bool:
     return True
 
 
-@functools.lru_cache(maxsize=25000)  # slightly more than number of currently published invTypes at 23623
+# slightly more than number of currently published invTypes at 23623
+@functools.lru_cache(maxsize=25000)
 def is_valid_name(string: str) -> bool:
     return string in TYPE_NAMES

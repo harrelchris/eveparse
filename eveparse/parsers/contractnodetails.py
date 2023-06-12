@@ -5,7 +5,7 @@ from eveparse.validators import is_int
 
 
 class ContractNoDetails(TabbedParser):
-    """Cybernetic Subprocessor - Basic	1	Cyber Learning	Implant	"""
+    """Cybernetic Subprocessor - Basic	1	Cyber Learning	Implant	"""  # fmt: skip
 
     @classmethod
     def parse(cls, string: str) -> tuple[str, int]:

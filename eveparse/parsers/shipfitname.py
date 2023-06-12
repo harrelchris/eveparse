@@ -1,5 +1,5 @@
-from eveparse.parsers.base import UnTabbedParser
 from eveparse.errors import ParserError
+from eveparse.parsers.base import UnTabbedParser
 
 
 class ShipFitName(UnTabbedParser):

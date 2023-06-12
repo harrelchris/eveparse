@@ -3,8 +3,6 @@ import functools
 from .constants import TYPES
 from .converters import normalize_string
 from .errors import ConverterError, ParserError, ValidatorError
-from .validators import is_int, is_legal_string, is_valid_name
-
 from .parsers.contract import Contract
 from .parsers.contractnodetails import ContractNoDetails
 from .parsers.nameonly import NameOnly
@@ -15,6 +13,8 @@ from .parsers.quantityspacename import QuantitySpaceName
 from .parsers.quantityspacexspacename import QuantitySpaceXSpaceName
 from .parsers.quantityxspacename import QuantityXSpaceName
 from .parsers.shipfitname import ShipFitName
+from .parsers.viewcontents import ViewContents
+from .validators import is_legal_string, is_valid_name
 
 PARSERS = [
     NameOnly,
@@ -27,6 +27,7 @@ PARSERS = [
     QuantitySpaceXSpaceName,
     QuantityXSpaceName,
     ShipFitName,
+    ViewContents,
 ]
 
 
