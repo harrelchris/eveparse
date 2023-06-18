@@ -8,6 +8,10 @@ ILLEGAL_STRINGS = [
     "item	required	available	est. unit price	typeid",
 ]
 
+ILLEGAL_STARTS = [
+    "abyssal",
+]
+
 
 def is_int(string: str) -> bool:
     # these patterns indicate a float value such as 1,000.00
@@ -30,6 +34,8 @@ def is_int(string: str) -> bool:
 
 def is_legal_string(string: str) -> bool:
     if string in ILLEGAL_STRINGS:
+        return False
+    if any((string.startswith(s) for s in ILLEGAL_STARTS)):
         return False
     return True
 
