@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from eveparse.validators import is_int, is_valid_name
+from eveparse.validators import is_int, is_legal_string, is_valid_name
 
 
 class IsIntTestCase(TestCase):
@@ -34,3 +34,14 @@ class IsValidNameTestCase(TestCase):
 
     def test_string_fails(self):
         self.assertEqual(is_valid_name("someinvalidstring"), False)
+
+
+class IsLegaLString(TestCase):
+    def test_example_passes(self):
+        self.assertEqual(is_legal_string("ragnarok"), True)
+
+    def test_illegal_strings(self):
+        self.assertEqual(is_legal_string("components"), False)
+
+    def test_illegal_starts(self):
+        self.assertEqual(is_legal_string("abyssal gyrostabilizer"), False)
