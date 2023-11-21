@@ -20,7 +20,7 @@ jobs:
         pip install -r requirements.txt
     - name: Run update script
       run: |-
-        python scripts/sde.py
+        python scripts/update.py
     - name: Commit and push new data
       run: |-
         git config user.name "Automated"
