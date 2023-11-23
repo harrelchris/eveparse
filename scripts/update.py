@@ -64,11 +64,15 @@ with read_compressed_csv(compressed_csv=translations_csv) as reader:
         elif tcID == "34":
             meta_groups.add(text.casefold())
 
-with META_PATH.open("w") as file:
-    json.dump(list(meta_groups), file)
+
+def dump_json(path: pathlib.Path, data: dict | list):
+    with path.open("w") as json_file:
+        json.dump(data, json_file)
+
 
 with TYPE_PATH.open("w") as file:
-    json.dump(dict(type_name_and_id), file)
+dump_json(path=META_PATH, data=list(meta_groups))
+dump_json(path=TYPE_PATH, data=dict(type_name_and_id))
 
 with HASH_PATH.open("w") as file:
     file.write(latest_hash)
