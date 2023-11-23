@@ -10,6 +10,8 @@ def parse(text: str) -> dict:
     errors = []
     for line in text.splitlines():
         normalized_line = line.casefold()
+        if not line.strip():
+            continue
         for parser in parsers:
             try:
                 type_dict = parser(normalized_line)
