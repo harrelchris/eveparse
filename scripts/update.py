@@ -10,8 +10,9 @@ import urllib.request
 BASE_PATH = pathlib.Path(__file__).resolve().parent.parent
 HASH_PATH = BASE_PATH / "hash.md5"
 DATA_PATH = BASE_PATH / "eveparse" / "data"
-TYPE_PATH = DATA_PATH / "types.json"
 META_PATH = DATA_PATH / "meta_groups.json"
+MARKET_GROUP_PATH = DATA_PATH / "market_groups.json"
+TYPE_PATH = DATA_PATH / "types.json"
 
 
 def request(url: str) -> bytes:
@@ -54,6 +55,7 @@ with read_compressed_csv(compressed_csv=inv_types_csv) as reader:
 # Extract casefolded meta group name and type names with type ids
 translations_csv = request("https://www.fuzzwork.co.uk/dump/latest/trnTranslations.csv.bz2")
 with read_compressed_csv(compressed_csv=translations_csv) as reader:
+    market_groups = set()
     meta_groups = set()
     type_name_and_id = set()
     header = next(reader)
@@ -61,6 +63,8 @@ with read_compressed_csv(compressed_csv=translations_csv) as reader:
         tcID, keyID, _, text = row
         if tcID == "8" and int(keyID) in type_ids:
             type_name_and_id.add((text.casefold(), keyID))
+        elif tcID == "7":
+            market_groups.add(text.casefold())
         elif tcID == "34":
             meta_groups.add(text.casefold())
 
@@ -70,7 +74,7 @@ def dump_json(path: pathlib.Path, data: dict | list):
         json.dump(data, json_file)
 
 
-with TYPE_PATH.open("w") as file:
+dump_json(path=MARKET_GROUP_PATH, data=list(market_groups))
 dump_json(path=META_PATH, data=list(meta_groups))
 dump_json(path=TYPE_PATH, data=dict(type_name_and_id))
 
