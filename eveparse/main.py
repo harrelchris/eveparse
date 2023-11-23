@@ -1,7 +1,17 @@
-import exceptions
+from eveparse import exceptions
+from eveparse.parsers import assets
+from eveparse.parsers import compare
+from eveparse.parsers import contract
+from eveparse.parsers import inventory
 
 parsers = [
-
+    assets.view_contents_container,
+    assets.view_contents_ship,
+    compare.dynamic_columns,
+    contract.multiple_items,
+    contract.multiple_items_no_details,
+    inventory.details,
+    inventory.icons,
 ]
 
 
