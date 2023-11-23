@@ -1,1 +1,1 @@
-from main import parse  # noqa
+from .main import parse  # noqa
