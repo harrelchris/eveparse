@@ -62,7 +62,7 @@ with read_compressed_csv(compressed_csv=translations_csv) as reader:
     for row in reader:
         tcID, keyID, _, text = row
         if tcID == "8" and int(keyID) in type_ids:
-            type_name_and_id.add((text.casefold(), keyID))
+            type_name_and_id.add((text.casefold(), int(keyID)))
         elif tcID == "7":
             market_groups.add(text.casefold())
         elif tcID == "34":
