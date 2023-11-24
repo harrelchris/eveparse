@@ -3,6 +3,7 @@ from eveparse.parsers import assets
 from eveparse.parsers import compare
 from eveparse.parsers import contract
 from eveparse.parsers import inventory
+from eveparse.parsers import killmail
 
 parsers = [
     assets.view_contents_container,
@@ -12,6 +13,7 @@ parsers = [
     contract.multiple_items_no_details,
     inventory.details,
     inventory.icons,
+    killmail.content,
 ]
 
 
