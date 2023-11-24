@@ -28,10 +28,10 @@ def quantity_string_to_int(string: str) -> int:
         cleaned_string = string.replace(",", "").replace(".", "")
         try:
             return int(cleaned_string)
-        except ValueError:
-            raise exceptions.ConverterException(string)
+        except ValueError as e:
+            raise exceptions.ConverterException(string) from e
     else:
         try:
             return int(string)
-        except ValueError:
-            raise exceptions.ConverterException(string)
+        except ValueError as e:
+            raise exceptions.ConverterException(string) from e
