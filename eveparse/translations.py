@@ -21,3 +21,21 @@ with TYPE_PATH.open("r") as file:
 
 ISK_UNITS = ['isk', '星币']
 VOLUME_UNITS = ['m3', 'm³', 'м^3']
+DROP_DESTROY = [
+    'destroyed',
+    'dropped',
+    '击杀',
+    '掉落',
+    'largué',
+    'détruit',
+    'zerstört',
+    'fallengelassen',
+    '破壊された',
+    'ドロップした',
+    '파괴됨',
+    '드랍됨',
+    'выпало в трофеи',
+    'уничтожено',
+    'soltado',
+    'destruido',
+]
