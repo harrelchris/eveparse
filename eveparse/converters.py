@@ -13,17 +13,17 @@ def quantity_string_to_int(string: str) -> int:
     string = string.strip()
     if not all([char in "1234567890,." for char in string]):
         raise exceptions.ConverterException(string)
-    if "," in string and "." in string:
-        if not string[-3] in ".," and string.endswith("00"):
+    if "," in string and "." in string:  # confirmed float
+        if not (string.endswith(".00") or string.endswith(",00")):  # mixed separators are only valid in floats
             raise exceptions.ConverterException(string)
-        trimmed_string = string[:-3]
+        trimmed_string = string[:-3]  # remove float ending
         cleaned_string = trimmed_string.replace(",", "").replace(".", "")
         try:
             return int(cleaned_string)
         except ValueError as e:
             raise exceptions.ConverterException(string) from e
     elif "," in string or "." in string:
-        if string.endswith(".00") or string.endswith(",00"):
+        if string.endswith(".00") or string.endswith(",00"):  # is a float
             string = string[:-3]
         cleaned_string = string.replace(",", "").replace(".", "")
         try:
