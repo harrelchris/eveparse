@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2023-11-23
+
+### Changed
+
+- now handles multiline blocks of text
+- changed return data to a dict containing a list of error lines and a dict of types and quantities
+- changed individual parsers to functions
+
 ## [1.0.0] - 2023-06-12
 
 ### Added
