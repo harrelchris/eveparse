@@ -3,6 +3,7 @@ from eveparse.parsers import assets
 from eveparse.parsers import compare
 from eveparse.parsers import contract
 from eveparse.parsers import inventory
+from eveparse.parsers import fitting
 from eveparse.parsers import killmail
 
 parsers = [
@@ -13,6 +14,11 @@ parsers = [
     contract.multiple_items_no_details,
     inventory.details,
     inventory.icons,
+    fitting.hull_name,
+    fitting.type_name_only,
+    fitting.module_with_ammo,
+    fitting.quantity_x,
+    fitting.x_quantity,
     killmail.content,
 ]
 
